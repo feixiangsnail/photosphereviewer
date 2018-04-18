@@ -12,6 +12,9 @@ var PSV = new PhotoSphereViewer({
 		height: '100%'
 	}
 });
+function handleSelect(mesh) {
+	console.log(mesh.name);
+}
 let loops = setInterval(function () {
 	if (PSV.scene) {
 		clearInterval(loops);
@@ -21,7 +24,7 @@ let loops = setInterval(function () {
 			let camera = scene.children[0];
 			labelGroup.position.set(PSV.point.x, PSV.point.y * 0.5 - 0.6, PSV.point.z);
 		}
-		labelGroup.changeColor(scene.children[0], document.getElementById('app'))
+		labelGroup.changeColor(scene.children[0], document.getElementById('app'), handleSelect)
 		scene.add(labelGroup);
 	}
 })

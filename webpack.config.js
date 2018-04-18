@@ -55,15 +55,11 @@ module.exports = {
             { 
                 test: /\.(eot|woff|ttf)$/, 
                 loader: 'file-loader'
-             },
-            {
-                test: /\.tsx?$/,
-                loader: 'ts-loader'
-            },
+             }
         ]
     },
     resolve: {
-        extensions: ['.ts', '.tsx','.js','.jsx'] ,
+        extensions: ['.js','.jsx'] ,
         modules: ['src' ,'node_modules'],
         alias: {
             'vue$': 'vue/dist/vue.common.js'

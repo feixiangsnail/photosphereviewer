@@ -73,7 +73,9 @@ LabelGroup.prototype.changeColor = function (camera, containerDom, leftHandCallb
         if (intersects.length > 0) {
             SELECTED = intersects[0].object;
             SELECTED.material.color = new THREE.Color(0x00ff00);
-            console.log(SELECTED.name);
+            if(leftHandCallback) leftHandCallback(SELECTED);
+            
+           
         }
     }
     containerDom.onmouseup = function (event) {
